@@ -8,17 +8,23 @@ public class ScoreCounter : MonoBehaviour
 {
     TextMeshPro scoreCard;
     public int score;
+    GameObject foot_ball;
+    public bool GameEndsStatus;
 
     void Start()
     {
         score = 0;
+        foot_ball = GameObject.Find("Soccer Ball");
         scoreCard = gameObject.GetComponent<TextMeshPro>();
-        InvokeRepeating("ScoreFunction", 1f, 1f);
+        InvokeRepeating("ScoreFunction", 0.1f, 0.1f);
     }
 
     void ScoreFunction()
     {
-        score++;
+        if (!GameEndsStatus)
+        {
+            score++;
+        }
         scoreCard.SetText(score.ToString());
         
     }

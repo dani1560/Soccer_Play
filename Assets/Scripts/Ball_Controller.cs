@@ -51,6 +51,7 @@ public class Ball_Controller : MonoBehaviour
                 Debug.Log("STEP 3");
             }
         }
+       
     }
 
     private void OnCollisionEnter(Collision collision)
