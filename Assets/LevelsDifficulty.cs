@@ -16,7 +16,6 @@ public class LevelsDifficulty : MonoBehaviour
         levels = GameObject.Find("Level");
         spikes1 = GameObject.Find("Spikes");
         spikes2 = GameObject.Find("Spikes2");
-
     }
 
     void Update()
@@ -68,7 +67,7 @@ public class LevelsDifficulty : MonoBehaviour
         {
             Debug.Log("levels_up");
             //spikes 2 entered
-            LeanTween.moveLocalY(spikes2, -156.33f, 1f);
+            LeanTween.moveLocalY(spikes2, -157f, 1f);
             levelStatus = 6;
         }
 
