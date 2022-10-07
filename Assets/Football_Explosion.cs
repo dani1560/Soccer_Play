@@ -35,6 +35,7 @@ public class Football_Explosion : MonoBehaviour
     IEnumerator Explosion()
     {
         football_particle.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
         LeanTween.scale(football, new Vector3(0f, 0f, 0f), 0.5f);
         football.GetComponent<SphereCollider>().enabled = false;
         yield return new WaitForSeconds(4f);

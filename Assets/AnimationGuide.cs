@@ -29,19 +29,7 @@ public class AnimationGuide : MonoBehaviour
         Score = GameObject.Find("Score");
         Soccerball = GameObject.Find("Soccer Ball");
         txt2.SetActive(false);
-
-        if(PlayerPrefs.GetString("tutorial_status") == "0")
-        {
-            txt.SetActive(false);
-            txt2.SetActive(true);
-            LeanTween.moveLocalY(spike, -156.4f, 1f);
-            click_counts = 2;
-
-        }else if (PlayerPrefs.GetString("tutorial_status") == "")
-        {
-            click_counts = 0;
-        }
-
+       // PlayerPrefs.SetString("tutorial_status", "");
     }
 
     // Update is called once per frame
@@ -83,8 +71,12 @@ public class AnimationGuide : MonoBehaviour
             Debug.Log("2 chala");
 
         }
-        else if (click_counts == 2)
+        else if (click_counts == 2 || PlayerPrefs.GetString("tutorial_status") == "0")
         {
+            if (PlayerPrefs.GetString("tutorial_status") == "0")
+            {
+                LeanTween.moveLocalY(spike, -156.4f, 1f);
+            }
             Score.GetComponent<ScoreCounter>().enabled = true;
             gameObject.SetActive(false);
             Soccerball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;

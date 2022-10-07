@@ -1106,8 +1106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f855c7664570ddb41aba7fc31dcf4d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerFrabs: 
-  onOff: 1
+  onOff: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,9 +1159,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 60
-  field of view: 34.2
+  field of view: 40.04504
   orthographic: 0
-  orthographic size: 17.814814
+  orthographic size: 21.155092
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1210,8 +1209,8 @@ MonoBehaviour:
   _adjustMode: 2
   _mainAreaWidth: 1
   _mainAreaHeight: 1.7777778
-  _verticalFOV: 34.2
-  _horizontalFOV: 19.635338
+  _verticalFOV: 34.12
+  _horizontalFOV: 19.587519
   _verticalSize: 17.814814
   _horizontalSize: 10.020833
 --- !u!1001 &966208023
@@ -1423,7 +1422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172883822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.00458, y: -153.73, z: 400.414}
+  m_LocalPosition: {x: 33.00458, y: -153.67, z: 400.414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55062,6 +55061,10 @@ PrefabInstance:
     - target: {fileID: 4922547814053344831, guid: 3a95867ee17f46347b69e1871e1989ca, type: 3}
       propertyPath: m_Name
       value: UI_Guide
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922547814053344831, guid: 3a95867ee17f46347b69e1871e1989ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5096677121348426674, guid: 3a95867ee17f46347b69e1871e1989ca, type: 3}
       propertyPath: m_RootOrder
