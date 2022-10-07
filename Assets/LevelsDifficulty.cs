@@ -23,7 +23,7 @@ public class LevelsDifficulty : MonoBehaviour
         LevelUp = GameObject.Find("Score").GetComponent<ScoreCounter>().score;
 
         //Level 1
-        if (LevelUp == 100 && levelStatus == 0)
+        if (LevelUp == 200 && levelStatus == 0)
         {  
             Debug.Log("levels_up");
             StartCoroutine(fontAnimation("LEVEL 2", 0.5f));
@@ -31,7 +31,7 @@ public class LevelsDifficulty : MonoBehaviour
         }
 
         //Level 2
-        else if (LevelUp == 200 && levelStatus == 1)
+        else if (LevelUp == 500 && levelStatus == 1)
         {
             Debug.Log("levels_up");
             StartCoroutine(fontAnimation("LEVEL 3", 0.3f));
@@ -39,43 +39,44 @@ public class LevelsDifficulty : MonoBehaviour
         }
 
         //Level 3
-        else if (LevelUp == 300 && levelStatus == 2)
+        else if (LevelUp == 1000 && levelStatus == 2)
         {
             Debug.Log("levels_up");
-            StartCoroutine(fontAnimation("LEVEL 4", 0.5f));
+            StartCoroutine(fontAnimation("LEVEL 4", 0.2f));
             levelStatus = 3;
         }
 
         //Level 4
-        else if (LevelUp == 350 && levelStatus == 3)
+        else if (LevelUp == 1500 && levelStatus == 3)
         {
             Debug.Log("levels_up");
-            StartCoroutine(fontAnimation("LEVEL 4", 0.5f));
+            StartCoroutine(fontAnimation("LEVEL 4", 0.1f));
             levelStatus = 4;
         }
 
         //Level 5
-        else if (LevelUp == 400 && levelStatus == 4)
+        else if (LevelUp == 1800 && levelStatus == 4)
         {
             Debug.Log("levels_up");
-            StartCoroutine(fontAnimation("LEVEL 5", 1f));
+            StartCoroutine(fontAnimation("LEVEL 5", 0.8f));
             levelStatus = 5;
         }
 
    
-        else if (LevelUp == 400 && levelStatus == 5)
+        else if (LevelUp == 2000 && levelStatus == 5)
         {
             Debug.Log("levels_up");
             //spikes 2 entered
+            StartCoroutine(fontAnimation("LEVEL 5", 0.9f));
             LeanTween.moveLocalY(spikes2, -157f, 1f);
             levelStatus = 6;
         }
 
         //Level 6
-        else if (LevelUp == 700 && levelStatus == 6)
+        else if (LevelUp == 2500 && levelStatus == 6)
         {
             Debug.Log("levels_up");
-            StartCoroutine(fontAnimation("LEVEL 6", 0.8f));
+            StartCoroutine(fontAnimation("LEVEL 6", 0.5f));
             levelStatus = 7;
         }
 

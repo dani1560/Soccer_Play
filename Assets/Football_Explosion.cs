@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Football_Explosion : MonoBehaviour
 {
@@ -9,8 +10,12 @@ public class Football_Explosion : MonoBehaviour
     public GameObject football;
     public GameObject GameEndSound;
     public GameObject Score;
+    string scoreFinal;
     // Start is called before the first frame update
-
+    private void Start()
+    {
+        scoreFinal = PlayerPrefs.GetString("scoreFinal");
+    }
     private void Reset()
     {
         football = GameObject.Find("Soccer Ball");
@@ -34,12 +39,13 @@ public class Football_Explosion : MonoBehaviour
 
     IEnumerator Explosion()
     {
+        PlayerPrefs.SetString("scoreFinal", Score.GetComponent<ScoreCounter>().score.ToString());
         football_particle.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         LeanTween.scale(football, new Vector3(0f, 0f, 0f), 0.5f);
         football.GetComponent<SphereCollider>().enabled = false;
         yield return new WaitForSeconds(4f);
         football.SetActive(false);
-        
+        SceneManager.LoadScene(2);
     }
 }
