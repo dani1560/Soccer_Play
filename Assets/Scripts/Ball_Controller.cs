@@ -27,26 +27,28 @@ public class Ball_Controller : MonoBehaviour
 
         if (Input.touches[0].phase == TouchPhase.Began)
         {
-            
+            //gameObject.transform.Translate(Vector3.up * 200 * Time.deltaTime, Space.Self);
             rb.AddForce(Vector3.up * 800 * Time.deltaTime ,ForceMode.VelocityChange);
             gameObject.GetComponent<AudioSource>().Play();
 
-            if (forceUp == 0)
+            Debug.Log("position -> "+ Input.GetTouch(0).position.x);
+
+            if (Input.GetTouch(0).position.x >= 230f && Input.GetTouch(0).position.x <= 500f)
             {
-                rb.AddForce(new Vector3(5f, 5f, 0f), ForceMode.Impulse);
+                rb.AddForce(new Vector3(0f, 5f, 0f), ForceMode.Impulse);
                 forceUp = 1;
                 Debug.Log("STEP 1");
             }
-            else if (forceUp == 1)
+            else if (Input.GetTouch(0).position.x < 230f)
             {
-                rb.AddForce(new Vector3(-5f, 5f, 0f), ForceMode.Impulse);
+                rb.AddForce(new Vector3(4f, 5f, 0f), ForceMode.Impulse);
                 forceUp = 2;
                 Debug.Log("STEP 2");
-                
+
             }
-            else if (forceUp == 2)
+            else if (Input.GetTouch(0).position.x > 500f)
             {
-                rb.AddForce(new Vector3(0f, 5f, 0f), ForceMode.Impulse);
+                rb.AddForce(new Vector3(-4f, 5f, 0f), ForceMode.Impulse);
                 forceUp = 0;
                 Debug.Log("STEP 3");
             }

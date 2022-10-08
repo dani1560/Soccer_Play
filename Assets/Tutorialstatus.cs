@@ -11,16 +11,6 @@ public class Tutorialstatus : MonoBehaviour
     {
         playerFrabs = PlayerPrefs.GetString("tutorial_status");
 
-        if (onOff)
-        {
-            PlayerPrefs.SetString("tutorial_status", "0");
-
-        }
-        else if (onOff == false)
-        {
-            PlayerPrefs.SetString("tutorial_status", "");
-        }
-
     }
     // Update is called once per frame
    
