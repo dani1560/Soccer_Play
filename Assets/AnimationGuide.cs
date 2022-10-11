@@ -10,7 +10,8 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class AnimationGuide : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Script by Syed Daniyal Shahid
+
     GameObject txt;
     GameObject txt2;
     GameObject Img;
@@ -29,10 +30,8 @@ public class AnimationGuide : MonoBehaviour
         Score = GameObject.Find("Score");
         Soccerball = GameObject.Find("Soccer Ball");
         txt2.SetActive(false);
-       // PlayerPrefs.SetString("tutorial_status", "");
     }
 
-    // Update is called once per frame
     void GuideScreen()
     {
         StartCoroutine(animationPlay());
@@ -56,10 +55,10 @@ public class AnimationGuide : MonoBehaviour
             txt.SetActive(false);
             txt2.SetActive(true);
             click_counts = 1;
-
             Debug.Log("1 chala");
         }
     }
+   
     public void OnHandClick()
     {
         if (click_counts == 1)
@@ -69,15 +68,15 @@ public class AnimationGuide : MonoBehaviour
             LeanTween.moveLocalY(spike, -156.4f, 1f);
             click_counts = 2;
             Debug.Log("2 chala");
-
         }
         else if (click_counts == 2 || PlayerPrefs.GetString("tutorial_status") == "0")
-        {
+        { 
             if (PlayerPrefs.GetString("tutorial_status") == "0")
             {
                 LeanTween.moveLocalY(spike, -156.4f, 1f);
             }
             Score.GetComponent<ScoreCounter>().enabled = true;
+            Soccerball.GetComponent<Ball_Controller>().startForce = new Vector3(3f, 0f, 0f);
             gameObject.SetActive(false);
             Soccerball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             Soccerball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;

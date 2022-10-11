@@ -6,6 +6,8 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class ScoreCounter : MonoBehaviour
 {
+    //Script by Syed Daniyal Shahid
+
     TextMeshPro scoreCard;
     public int score;
     GameObject foot_ball;
@@ -16,7 +18,7 @@ public class ScoreCounter : MonoBehaviour
         score = 0;
         foot_ball = GameObject.Find("Soccer Ball");
         scoreCard = gameObject.GetComponent<TextMeshPro>();
-        InvokeRepeating("ScoreFunction", 0.1f, 0.1f);
+        InvokeRepeating("ScoreFunction", 0.05f, 0.05f);
     }
 
     void ScoreFunction()

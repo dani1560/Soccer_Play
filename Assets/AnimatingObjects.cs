@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class AnimatingObjects : MonoBehaviour
 {
+    //Script by Syed Daniyal Shahid
+
     public GameObject Logo;
     public GameObject Start_btn;
     public GameObject Circle;
-    // Start is called before the first frame update
+
     private void Start()
     {
         StartCoroutine(LogoAnimate());
@@ -21,13 +23,11 @@ public class AnimatingObjects : MonoBehaviour
         Circle = GameObject.Find("Tutorial_btn");
     }
 
-    // Update is called once per frame
-
     void ballRotate()
     {
-        StartCoroutine(animatingObj());
-       
+        StartCoroutine(animatingObj());      
     }
+    
     IEnumerator animatingObj()
     {
         LeanTween.scale(Circle, new Vector3(1.2f, 1.2f, 1.2f), 1f);
@@ -46,7 +46,7 @@ public class AnimatingObjects : MonoBehaviour
 
     }
 
-        public void OnClickbtn()
+    public void OnClickbtn()
     {
         SceneManager.LoadScene(1);
     }

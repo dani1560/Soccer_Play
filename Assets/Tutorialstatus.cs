@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Tutorialstatus : MonoBehaviour
 {
+    //Script by Syed Daniyal Shahid
+
     string playerFrabs;
     public bool onOff;
-    // Start is called before the first frame update
+   
     private void Start()
     {
         playerFrabs = PlayerPrefs.GetString("tutorial_status");
 
     }
-    // Update is called once per frame
    
 }

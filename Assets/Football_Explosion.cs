@@ -6,24 +6,25 @@ using UnityEngine.SceneManagement;
 
 public class Football_Explosion : MonoBehaviour
 {
+    //Script by Syed Daniyal Shahid
+
     public GameObject football_particle;
     public GameObject football;
     public GameObject GameEndSound;
     public GameObject Score;
     string scoreFinal;
-    // Start is called before the first frame update
+  
     private void Start()
     {
         scoreFinal = PlayerPrefs.GetString("scoreFinal");
     }
+   
     private void Reset()
     {
         football = GameObject.Find("Soccer Ball");
         Score = GameObject.Find("Score");
-
         football_particle = football.transform.GetChild(0).gameObject;
-        GameEndSound = football.transform.GetChild(1).gameObject;
-        
+        GameEndSound = football.transform.GetChild(1).gameObject; 
     }
 
     // Update is called once per frame
