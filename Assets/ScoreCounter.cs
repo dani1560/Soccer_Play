@@ -18,7 +18,7 @@ public class ScoreCounter : MonoBehaviour
         score = 0;
         foot_ball = GameObject.Find("Soccer Ball");
         scoreCard = gameObject.GetComponent<TextMeshPro>();
-        InvokeRepeating("ScoreFunction", 0.05f, 0.05f);
+        InvokeRepeating("ScoreFunction", 0.08f, 0.08f);
     }
 
     void ScoreFunction()
